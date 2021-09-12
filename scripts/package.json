@@ -1,0 +1,9 @@
+{
+  "name": "scripts",
+  "version": "1.0.0",
+  "description": "scripts",
+  "license": "ISC",
+  "dependencies": {
+    "firebase-admin": "^9.11.1"
+  }
+}
