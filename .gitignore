@@ -127,3 +127,5 @@ dist
 **/yarn-error.log*
 
 **/serviceAccountKey.json
+
+.firebase
