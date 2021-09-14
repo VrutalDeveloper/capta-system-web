@@ -1,6 +1,11 @@
 import { collection, getDocs } from "firebase/firestore";
 import { useEffect, useState } from "react";
 import db from "../config/firebase";
+import Layout from "../components/layout/Layout";
+import SectionCategories from "../components/home/SectionCategories";
+import SectionNews from "../components/home/SectionNews";
+import SectionPostForCategory from "../components/home/SectionPostForCategory";
+import Newsletter from "../components/home/Newsletter";
 
 
 export default function Home() {
@@ -18,20 +23,18 @@ export default function Home() {
       }))
       setPosts(posts)
     })()
- 
+
   }, [])
 
 
   return (
-     <div className="bg-red-300">
-
-        {
-          posts.map((post) => {
-            return <div key={post.id} >{post.title}</div>
-          })
-        }
-
-       <h1>Hola</h1>
-     </div>
+     <Layout>
+       <SectionCategories/>
+       <SectionNews/>
+       <SectionPostForCategory title="Advertising" link="/categories/adver"/>
+         <SectionPostForCategory title="Case Studies" link="/categories/case"/>
+         <SectionPostForCategory title="Innovation" link="/categories/innovation"/>
+         <Newsletter/>
+     </Layout>
   )
 }
